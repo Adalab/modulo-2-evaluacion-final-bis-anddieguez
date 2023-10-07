@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    margin: 5rem;
+}
+
+.list-twitter{
+    background-color: aquamarine;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.img{
+    margin-top: 2rem;
+}
+.title-username{
+    margin-bottom: 2rem;
+}
+
+.list-twitter-friends{
+    background-color: pink;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
