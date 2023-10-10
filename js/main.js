@@ -45,7 +45,6 @@ function limpiadora(dirtyData) {//dataApi.results rebautizado a dirtyData
         lastname: dirtyUser.name.last,
         picture: dirtyUser.picture.medium,
         username: dirtyUser.login.username,
-        id: dirtyUser.id.value,
         uuid: dirtyUser.login.uuid,
         //email: dirtyUser.email, //--> SI QUIERO AÑADIR MÁS PROPIEDADES AL OBJETO.
       };
@@ -54,15 +53,15 @@ function limpiadora(dirtyData) {//dataApi.results rebautizado a dirtyData
     //console.log(cleanData);
     return cleanData;
   }
-
+                                // ****** LUNES ******//
 //console.log(cleanData);
 
 
 function addListenerUser(){
 const allUser = document.querySelectorAll('.js-list-user-twitterlab');//me traigo toda la lista de usuarios pintados en el html
 for (const user of allUser) {// para cada usuario de la lista que me he traido, añademe un escuchador (lineser) que cuando haga click llame a handleclickFriend
-    user.addEventListener('click', handleClickFriend);
-}}
+    user.addEventListener('click', handleClickFriend);//A CADA USUARIO LE AÑADO UN ESCUCHADOR DE CLICK
+}};
 
 
 
@@ -71,25 +70,31 @@ function handleClickFriend(event){
     
     //tenemos que definir el id en el que hemos hecho click
     const idFriendClick = (event.currentTarget.id);//guardo en const idFriendClick el id en el que se ha hecho click (y el parseInt es para que me convierta el string en numero --> quite el parceIn xk no cogi el id, sino el login uuid)
-    console.log(idFriendClick);
+   // console.log(idFriendClick);
+
+
 
     //tenemos que usar el metodo findIndex para saber si ya es amigo o no
     
-   /* const isFriend = dataFriends.findIndex((elem) => elem.id === idFriendClick);
+    const isFriend = dataFriends.findIndex((elem) => elem.uuid === idFriendClick);
     console.log(isFriend);
+    
 
-    let clickUser = data.results.find((elem) => elem.id === idFriendClick);
+    let clickUser = cleanData.find((elem) => elem.uuid === idFriendClick);
+    //console.log(cleanData);
     console.log(clickUser);
 
+    /*clickUser.isFriend = true;
+    console.log(clickUser);*/
     //encuentrame (dentro de los amigos) el elemento cuyo id es igual a idFriendClick (el id en el que se ha hecho click en el evento)
     if (isFriend !== -1){
-        console.log(clickUser);
-        clickUser.isFriend = true;
+        console.log('no es amigo');
+        //clickUser.isFriend = true;
         
     } else {
-        
-        clickUser.isFriend = false;
-    }*/
+      console.log('es amigo');
+       // clickUser.isFriend = false;
+    }
 }
 
 
