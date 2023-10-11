@@ -24,7 +24,7 @@
     margin-bottom: 2rem;
 }
 
-.list-twitter-friends{
+.friends{
     background-color: pink;
     list-style-type: none;
     display: flex;
@@ -32,3 +32,4 @@
     align-items: center;
     margin-bottom: 5rem;
 }
+
