@@ -51,7 +51,7 @@ function limpiadora(dirtyData) {
   //console.log(cleanData);
   return cleanData;
 }
-// ****** LUNES ******//
+
 //console.log(cleanData);
 
 function addListenerUser() {
@@ -64,7 +64,7 @@ function addListenerUser() {
 
 function handleClickFriend(event) {
   //tenemos que definir el id en el que hemos hecho click
-  const idFriendClick = event.currentTarget.id; //guardo en const idFriendClick el id en el que se ha hecho click (y el parseInt es para que me convierta el string en numero --> quite el parceIn xk no cogi el id, sino el login uuid)
+  const idFriendClick = event.currentTarget.id; //guardo en const idFriendClick el id en el que se ha hecho click 
   // console.log(idFriendClick);
 
   //tenemos que usar el metodo findIndex para saber si ya es amigo o no
@@ -83,12 +83,12 @@ function handleClickFriend(event) {
   if (isFriend === -1) {
     dataFriends.push(clickUser);
     //console.log(dataFriends);
-    console.log("no es amigo");
+    console.log("no era amigo y pasa a serlo");
     clickUser.isFriend = true;
     addClass(clickUser);
   } else {
     dataFriends.splice(clickUser, 1);
-    console.log("es amigo");
+    console.log("es amigo y deja de serlo");
     clickUser.isFriend = false;
     //delete clickUser.isFriend; //si en vez de que ponga falso quiero que me elimine la propiedad del objeto.
     removeClass(clickUser);
