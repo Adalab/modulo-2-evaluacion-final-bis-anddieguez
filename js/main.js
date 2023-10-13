@@ -11,9 +11,6 @@ let cleanUser = {};
 let dataFriends = [];
 //buscador de usuarios
 
-//1.- obtener 10 usuarios al azar al arrancar la pag
-//2.- hacer el fetch
-//3.- pintar en la pantalla
 
 fetch("https://randomuser.me/api/?results=10")
   .then((response) => response.json())
